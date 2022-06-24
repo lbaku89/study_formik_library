@@ -27,7 +27,7 @@ import * as Yup from 'yup';
 // };
 
 function App() {
-  
+
   const formik = useFormik({
     initialValues:{
       firstName:'',
@@ -57,10 +57,11 @@ function App() {
         <input
           id="firstName"
           name='firstName'
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.firstName}
+          {...formik.getFieldProps('firstName')}
+          // type="text"
+          // onChange={formik.handleChange}
+          // onBlur={formik.handleBlur}
+          // value={formik.values.firstName}
         />
        {formik.touched.firstName && formik.errors.firstName? (<div>{formik.errors.firstName}</div>): null}
 
@@ -68,10 +69,11 @@ function App() {
         <input
           id="lastName"
           name='lastName'
-          type="text"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.lastName}
+          {...formik.getFieldProps('lastName')}
+          // type="text"
+          // onChange={formik.handleChange}
+          // onBlur={formik.handleBlur}
+          // value={formik.values.lastName}
         />
         {formik.touched.lastName && formik.errors.lastName? <div>{formik.errors.lastName}</div>:null} 
 
@@ -80,10 +82,11 @@ function App() {
         <input
           id="email"
           name="email"
-          type="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
+          {...formik.getFieldProps('email')}
+          // type="email"
+          // onChange={formik.handleChange}
+          // onBlur={formik.handleBlur}
+          // value={formik.values.email}
         />
         {formik.touched.email &&formik.errors.email?<div>{formik.errors.email}</div>:null}
         <button type="submit">Submit</button>
